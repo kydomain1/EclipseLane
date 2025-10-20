@@ -1,0 +1,325 @@
+/* Pages Specific Styles (About & Contact) */
+
+.content-section {
+    padding: 4rem 0 6rem;
+}
+
+.content-max-width {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.text-content {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.6s ease;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 1.5rem;
+}
+
+.section-title-centered {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.text-content p {
+    color: var(--color-gray-600);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    animation: slideUp 0.6s ease;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.value-icon {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-gray-100);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--color-gray-700);
+}
+
+.value-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+}
+
+.value-card p {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+/* Categories Section */
+.categories-section {
+    background-color: var(--color-gray-50);
+    padding: 4rem 0 6rem;
+}
+
+.categories-grid-about {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.category-card-about {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    animation: slideUp 0.6s ease;
+}
+
+.category-card-about h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+}
+
+.category-card-about p {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 4rem 0 6rem;
+}
+
+.mission-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission-text {
+    font-size: 1.25rem;
+    color: var(--color-gray-600);
+    line-height: 1.8;
+}
+
+/* Contact Page Styles */
+.contact-section {
+    padding: 4rem 0 6rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.contact-info {
+    animation: slideUp 0.6s ease;
+}
+
+.contact-intro {
+    font-size: 1.125rem;
+    color: var(--color-gray-600);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-method-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-gray-100);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-gray-700);
+}
+
+.contact-method h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.contact-method p,
+.contact-method a {
+    color: var(--color-gray-600);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.contact-method a:hover {
+    color: var(--color-gray-900);
+}
+
+.response-time {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.response-time h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+}
+
+.response-time p {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form-container {
+    animation: slideUp 0.6s ease 0.1s both;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-900);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-gray-400);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-gray-800);
+}
+
+.submit-btn svg {
+    transition: transform var(--transition-fast);
+}
+
+.submit-btn:hover svg {
+    transform: translate(2px, -2px);
+}
+
+.form-message {
+    text-align: center;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .categories-grid-about {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title-centered {
+        font-size: 2.5rem;
+    }
+}
+
+

@@ -217,6 +217,63 @@ EclipseLane-main/
 4. **测试本地** - 修改后用本地服务器测试
 5. **提交前检查** - 确保没有破坏现有功能
 
+## 注意事项
+
+1. **每次修改后检查链接** - 确保联盟追踪链接正确
+2. **图片使用外部链接** - 推荐使用 Unsplash
+3. **保持排版一致** - 参考现有文章格式
+4. **测试本地** - 修改后用本地服务器测试
+5. **提交前检查** - 确保没有破坏现有功能
+
 ---
+
+## 修改主页卡片的正确方法
+
+### 重要：先检查原始文件结构
+
+添加新文章卡片前，必须先检查 index.html 的 articles-grid 结构是否正确：
+
+```python
+import re
+content = open('index.html').read()
+match = re.search(r'<div class="articles-grid">(.*?)</section>', content, re.DOTALL)
+grid = match.group(1)
+opens = grid.count('<article')
+closes = grid.count('</article>')
+print(f'Articles: opens={opens}, closes={closes}')
+# 必须相等才能继续
+```
+
+### 如果结构不平衡
+
+1. **多余的 `</article>`** - 找到并删除（在 `<article` 之前的位置）
+2. **缺少 `</article>`** - 在对应位置添加
+
+### 添加新卡片的步骤
+
+1. **确认结构平衡后** - 才能进行修改
+2. **定位插入点** - 在 `<div class="articles-grid">` 之后，第一个现有卡片之前
+3. **一次性完成** - 不要分多次编辑
+4. **验证结果** - 再次检查标签是否平衡
+
+### 验证命令
+
+```bash
+# 检查 Thrive 文章数量（应该是 4：图片、分类、标题、摘要）
+python -c "print(open('index.html').count('Thrive Pet Foods'))"
+
+# 检查 articles-grid 内的标签平衡
+python -c "
+import re
+content = open('index.html').read()
+m = re.search(r'<div class=\"articles-grid\">(.*?)</section>', content, re.DOTALL)
+grid = m.group(1)
+print(f'opens: {grid.count(\"<article\")}, closes: {grid.count(\"</article>\")}')
+"
+```
+
+---
+
+*最后更新：2026-03-02*
 
 *最后更新：2026-02-27*

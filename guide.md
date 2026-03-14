@@ -272,6 +272,27 @@ print(f'opens: {grid.count(\"<article\")}, closes: {grid.count(\"</article>\")}'
 "
 ```
 
+### 卡片去重和移动
+
+如果发现主页有重复的卡片：
+
+1. **查找重复** - 搜索文章标题，确认所有出现位置
+   ```bash
+   grep -n "文章标题" index.html
+   ```
+
+2. **删除重复** - 保留需要的位置，删除多余的卡片代码
+   ```html
+   <!-- 删除整个重复的 article 块 -->
+   <article class="article-card" data-category="...">
+       ...
+   </article>
+   ```
+
+3. **移动位置** - 先删除要移动的卡片，然后在目标位置插入
+
+4. **验证** - 检查 `<article` 和 `</article>` 标签数量是否一致
+
 ---
 
 *最后更新：2026-03-02*

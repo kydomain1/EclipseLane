@@ -293,6 +293,37 @@ print(f'opens: {grid.count(\"<article\")}, closes: {grid.count(\"</article>\")}'
 
 4. **验证** - 检查 `<article` 和 `</article>` 标签数量是否一致
 
+### 修改日期或重复内容时的注意事项
+
+如果需要修改多个相同元素（如多个卡片使用相同日期），直接替换会导致匹配不唯一。
+
+**问题示例：**
+```
+错误：直接替换 "July 19, 2025" 
+原因：多个卡片都使用这个日期，grep 无法区分
+错误信息：Found multiple matches for oldString
+```
+
+**解决方法：**
+使用更多上下文内容来唯一标识：
+```html
+<!-- 替换前：包含文章标题或更多周围标签 -->
+<oldString>
+    <h2 class="article-title">Palm Angels: ...</h2>
+    ...
+    July 19, 2025
+    ...
+</oldString>
+
+<!-- 替换后：使用唯一标识的内容 -->
+<newString>
+    <h2 class="article-title">Palm Angels: ...</h2>
+    ...
+    March 15, 2026
+    ...
+</newString>
+```
+
 ---
 
 *最后更新：2026-03-02*

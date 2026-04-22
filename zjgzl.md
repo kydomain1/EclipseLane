@@ -2,7 +2,7 @@
 
 ## 概述
 
-本文档总结了在 EclipseLane 项目中添加联盟营销文章的完整工作流程，以 Xcaret Park 文章为例。
+本文档总结了在 comprehensiveworld 项目中添加联盟营销文章的完整工作流程，以 Xcaret Park 文章为例。
 
 ---
 
@@ -55,7 +55,7 @@ websearch "xcaret.com theme parks Mexico Riviera Maya 2025"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="文章描述">
-    <title>文章标题 - EclipseLane</title>
+    <title>文章标题 - comprehensiveworld</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/article.css">
@@ -178,7 +178,7 @@ with open('articles/xcaret-park.html', 'w') as f:
 
 本地测试命令:
 ```bash
-cd G:\Opencode_Code\EclipseLane-main
+cd G:\Opencode_Code\comprehensiveworld-main
 python -m http.server 8080
 ```
 

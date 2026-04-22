@@ -2,7 +2,7 @@
 
 ## 🎯 推送信息
 
-**GitHub仓库地址：** https://github.com/kydomain1/EclipseLane.git
+**GitHub仓库地址：** https://github.com/kydomain1/comprehensiveworld.git
 
 **推送时间：** 刚刚完成
 
@@ -56,7 +56,7 @@
 
 ### GitHub仓库页面：
 ```
-https://github.com/kydomain1/EclipseLane
+https://github.com/kydomain1/comprehensiveworld
 ```
 
 ### 查看代码：
@@ -64,7 +64,7 @@ https://github.com/kydomain1/EclipseLane
 
 ### 克隆仓库：
 ```bash
-git clone https://github.com/kydomain1/EclipseLane.git
+git clone https://github.com/kydomain1/comprehensiveworld.git
 ```
 
 ---
@@ -77,7 +77,7 @@ git clone https://github.com/kydomain1/EclipseLane.git
 
 1. **访问仓库设置**
    ```
-   https://github.com/kydomain1/EclipseLane/settings
+   https://github.com/kydomain1/comprehensiveworld/settings
    ```
 
 2. **找到Pages设置**
@@ -93,7 +93,7 @@ git clone https://github.com/kydomain1/EclipseLane.git
    - 大约1-2分钟后，网站会自动部署
    
 5. **访问网站**
-   - 网址会是：`https://kydomain1.github.io/EclipseLane/`
+   - 网址会是：`https://kydomain1.github.io/comprehensiveworld/`
 
 ---
 
@@ -108,13 +108,13 @@ git init
 git add .
 
 # 3. 提交文件
-git commit -m "Initial commit: EclipseLane minimalist blog website with 5 articles, search, filtering, and responsive design"
+git commit -m "Initial commit: comprehensiveworld minimalist blog website with 5 articles, search, filtering, and responsive design"
 
 # 4. 重命名分支为main
 git branch -M main
 
 # 5. 添加远程仓库
-git remote add origin https://github.com/kydomain1/EclipseLane.git
+git remote add origin https://github.com/kydomain1/comprehensiveworld.git
 
 # 6. 推送到GitHub
 git push -u origin main
@@ -184,7 +184,7 @@ git push
 - 无文件丢失或错误
 
 ✅ **仓库可访问**
-- 可以在 https://github.com/kydomain1/EclipseLane 查看
+- 可以在 https://github.com/kydomain1/comprehensiveworld 查看
 
 ---
 
@@ -222,5 +222,5 @@ git push
 
 **推送完成！** 🎊
 
-你的EclipseLane博客网站现在已经在GitHub上了！
+你的comprehensiveworld博客网站现在已经在GitHub上了！
 

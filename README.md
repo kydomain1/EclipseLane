@@ -1,4 +1,4 @@
-# EclipseLane - Lifestyle & Insights Blog
+# comprehensiveworld - Lifestyle & Insights Blog
 
 A minimalist, static website featuring curated content on fashion, beauty, home, travel, finance, and food.
 
@@ -18,7 +18,7 @@ A minimalist, static website featuring curated content on fashion, beauty, home,
 ## 📁 Project Structure
 
 ```
-EclipseLane/
+comprehensiveworld/
 ├── index.html                 # Home page
 ├── about.html                 # About page
 ├── contact.html               # Contact page

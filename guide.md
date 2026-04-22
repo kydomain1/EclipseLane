@@ -1,4 +1,4 @@
-# EclipseLane 项目开发指南
+# comprehensiveworld 项目开发指南
 
 ## 目录
 - [项目简介](#项目简介)
@@ -11,7 +11,7 @@
 
 ## 项目简介
 
-EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CSS3、Vanilla JavaScript 构建。
+comprehensiveworld 是一个极简风格的生活博客静态网站，使用 HTML5、CSS3、Vanilla JavaScript 构建。
 
 **技术栈：**
 - HTML5
@@ -46,7 +46,7 @@ EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CS
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="文章描述">
-    <title>文章标题 - EclipseLane</title>
+    <title>文章标题 - comprehensiveworld</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/article.css">
@@ -200,7 +200,7 @@ https://images.unsplash.com/photo-{图片ID}?w={宽度}&h={高度}&fit=crop
 
 启动本地服务器：
 ```bash
-cd G:\Opencode_Code\EclipseLane-main
+cd G:\Opencode_Code\comprehensiveworld-main
 python -m http.server 8080
 ```
 
@@ -217,7 +217,7 @@ curl -sI "图片URL" | head -5
 ## 文件结构
 
 ```
-EclipseLane-main/
+comprehensiveworld-main/
 ├── index.html              # 主页
 ├── about.html             # 关于页面
 ├── contact.html           # 联系页面

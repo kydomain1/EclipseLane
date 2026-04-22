@@ -32,7 +32,7 @@ EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CS
 
 ### 步骤 1：分析现有文章格式
 
-参考现有文章结构：`articles/concert-tickets-on-viagogo-marketplace.html`
+参考现有文章结构：`articles/concert-tickets-on-viagogo-marketplace.html` 或 `articles/sams-club-shopping-guide-2026.html`
 
 ### 步骤 2：创建新文章 HTML 文件
 
@@ -66,17 +66,17 @@ EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CS
             <div class="article-container">
                 <span class="article-category-badge">分类名称</span>
                 <h1 class="article-detail-title">文章标题</h1>
-                
+
                 <div class="article-meta-info">
                     <div class="meta-item">作者信息</div>
                     <div class="meta-item">日期</div>
                     <div class="meta-item">阅读时间</div>
                 </div>
-                
+
                 <div class="featured-image">
                     <img src="..." alt="...">
                 </div>
-                
+
                 <div class="article-body">
                     <!-- 文章内容 -->
                 </div>
@@ -96,7 +96,7 @@ EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CS
 
 **链接格式：**
 ```html
-<a href="https://app.partnermatic.com/track/xxx?url=https%3A%2F%2F目标网站.com" target="_blank" rel="noopener noreferrer">链接文字</a>
+<a href="https://app.partnermatic.com/track/{追踪ID}?url={URL编码后的目标网址}" target="_blank" rel="noopener noreferrer">链接文字</a>
 ```
 
 **重要提示：**
@@ -105,14 +105,29 @@ EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CS
 
 ### 步骤 4：添加图片
 
-使用 Unsplash 高质量免费图片：
+**Sam's Club 图片URL格式：**
 ```html
-<img src="https://images.unsplash.com/photo-xxx?w=1200&h=600&fit=crop" alt="图片描述">
+<img src="https://i5.samsclubimages.com/asr/xxxxx.jpeg?odnHeight=600&odnWidth=600&odnBg=FFFFFF" alt="商品名称" style="width: 48%; border-radius: 8px;">
+```
+
+**产品图片布局（每商品2张）：**
+```html
+<div class="product-images" style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+    <img src="图1URL" alt="商品名称" style="width: 48%; border-radius: 8px;">
+    <img src="图2URL" alt="商品名称" style="width: 48%; border-radius: 8px;">
+</div>
 ```
 
 **图片类型：**
 - 封面图：`featured-image` 类，尺寸 1200x600
 - 正文图：`article-image` 类，尺寸 1200x600
+- 商品图：600x600 正方形（使用 odnHeight=600&odnWidth=600）
+
+**验证图片URL是否有效：**
+```bash
+curl -sI "图片URL" | head -5
+# HTTP/1.1 200 OK 表示有效
+```
 
 ### 步骤 5：更新主页
 
@@ -160,6 +175,13 @@ EclipseLane 是一个极简风格的生活博客静态网站，使用 HTML5、CS
 https://app.partnermatic.com/track/{追踪ID}?url={URL编码后的目标网址}
 ```
 
+### Sam's Club 图片URL格式
+```
+https://i5.samsclubimages.com/asr/{图片ID}.{hash}.jpeg?odnHeight=600&odnWidth=600&odnBg=FFFFFF
+```
+- 获取正方形 600x600 图片
+- 原始图片通常为 2000x2000
+
 ### Unsplash 图片链接格式
 ```
 https://images.unsplash.com/photo-{图片ID}?w={宽度}&h={高度}&fit=crop
@@ -183,6 +205,12 @@ python -m http.server 8080
 ```
 
 访问：http://localhost:8080
+
+### 验证图片URL
+```bash
+curl -sI "图片URL" | head -5
+# 返回 HTTP/1.1 200 OK 表示图片有效
+```
 
 ---
 

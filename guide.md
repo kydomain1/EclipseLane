@@ -2,9 +2,12 @@
 
 ## 目录
 - [项目简介](#项目简介)
-- [添加联盟营销文章](#添加联盟营销文章)
+- [上传新文章（提示词模板）](#上传新文章提示词模板)
+- [添加文章详细步骤](#添加文章详细步骤)
+- [首页区块说明](#首页区块说明)
+- [卡片 HTML 模板](#卡片-html-模板)
 - [常见问题解决](#常见问题解决)
-- [技术要点](#技术要点)
+- [技术参考](#技术参考)
 - [文件结构](#文件结构)
 
 ---
@@ -13,30 +16,59 @@
 
 comprehensiveworld 是一个极简风格的生活博客静态网站，使用 HTML5、CSS3、Vanilla JavaScript 构建。
 
-**技术栈：**
-- HTML5
-- CSS3
-- Vanilla JavaScript
+**技术栈：** HTML5 + CSS3 + Vanilla JavaScript（纯静态，无构建工具）
 
-**主要功能：**
-- 文章搜索
-- 分类筛选
-- 分页
-- 文章详情页
-- 产品推荐
-- 联系表单
+**首页布局：**
+- Hero 区域（标题 + 浮动卡片）
+- 分类卡片（6 个视觉引导，不可点击）
+- Feature 大卡片（2-3 篇重磅推荐）
+- Offer 商家卡片（4 篇合作推广）
+- Impact 全宽图
+- Standards 信任指标
+- Insights 三列卡片（常规文章，3 的倍数）
+- Final CTA
 
 ---
 
-## 添加联盟营销文章
+## 上传新文章（提示词模板）
 
-### 步骤 1：分析现有文章格式
+上传新文章时，使用以下提示词格式：
 
-参考现有文章结构：`articles/concert-tickets-on-viagogo-marketplace.html` 或 `articles/sams-club-shopping-guide-2026.html`
+```
+新增一篇文章，信息如下：
 
-### 步骤 2：创建新文章 HTML 文件
+标题：[文章标题]
+分类：[fashion/beauty/home/travel/finance/food/entertainment]
+摘要：[一句话描述]
+图片：[封面图URL]
+文章链接：[articles/xxx.html]
+阅读时间：[X min read]
+
+放置位置：[feature / offer / insights]
+
+--- 以下仅 offer 区块需要 ---
+商家名称：[品牌名]
+商家品类：[品类描述]
+CTA文案：[Visit Store / Check Current Offers / Explore Partner Site / View Picks]
+```
+
+**放置位置选择建议：**
+
+| 区块 | 适合内容 | 数量 |
+|------|----------|------|
+| `feature` | 深度评测、重磅推荐 | 2-3 篇 |
+| `offer` | 有明确品牌的合作推广 | 4 篇 |
+| `insights` | 常规文章、指南、资讯 | 3 的倍数 |
+
+---
+
+## 添加文章详细步骤
+
+### 步骤 1：创建文章 HTML 文件
 
 位置：`articles/xxx.html`
+
+参考现有文章结构，如 `articles/spier-mackay-mens-tailored-fashion-guide.html`
 
 **标准文章结构：**
 ```html
@@ -52,31 +84,46 @@ comprehensiveworld 是一个极简风格的生活博客静态网站，使用 HTM
     <link rel="stylesheet" href="../css/article.css">
 </head>
 <body>
-    <!-- Header -->
-    <header id="header" class="header">...</header>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <img src="https://cdn.ultrainfluence.com/uploads/20260422/df9d38e8d246746fcf7f61093067c844d401477b6b6381542499c32732843401.png" alt="CW" class="logo-icon">
+                    <span class="logo-text">comprehensiveworld</span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../about.html" class="nav-link">About</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="../index.html" class="mobile-nav-link">Home</a>
+                <a href="../about.html" class="mobile-nav-link">About</a>
+                <a href="../contact.html" class="mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Back Button -->
     <div class="container" style="padding-top: 8rem;">
         <a href="../index.html" class="back-link">Back to Articles</a>
     </div>
 
-    <!-- Article Content -->
     <article class="article-detail">
         <div class="container">
             <div class="article-container">
                 <span class="article-category-badge">分类名称</span>
                 <h1 class="article-detail-title">文章标题</h1>
-
                 <div class="article-meta-info">
-                    <div class="meta-item">作者信息</div>
                     <div class="meta-item">日期</div>
                     <div class="meta-item">阅读时间</div>
                 </div>
-
                 <div class="featured-image">
                     <img src="..." alt="...">
                 </div>
-
                 <div class="article-body">
                     <!-- 文章内容 -->
                 </div>
@@ -84,75 +131,108 @@ comprehensiveworld 是一个极简风格的生活博客静态网站，使用 HTM
         </div>
     </article>
 
-    <!-- Footer -->
-    <footer class="footer">...</footer>
-
+    <footer>...</footer>
     <script src="../js/main.js"></script>
 </body>
 </html>
 ```
 
-### 步骤 3：添加联盟链接
+### 步骤 2：添加联盟链接
 
-**链接格式：**
 ```html
 <a href="https://app.partnermatic.com/track/{追踪ID}?url={URL编码后的目标网址}" target="_blank" rel="noopener noreferrer">链接文字</a>
 ```
 
-**重要提示：**
-- 不要使用 `<mark class="link-highlight">` 标签（会有黄色背景）
-- 必须添加 `target="_blank" rel="noopener noreferrer"`
+### 步骤 3：添加图片
 
-### 步骤 4：添加图片
-
-**Sam's Club 图片URL格式：**
-```html
-<img src="https://i5.samsclubimages.com/asr/xxxxx.jpeg?odnHeight=600&odnWidth=600&odnBg=FFFFFF" alt="商品名称" style="width: 48%; border-radius: 8px;">
-```
-
-**产品图片布局（每商品2张）：**
-```html
-<div class="product-images" style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
-    <img src="图1URL" alt="商品名称" style="width: 48%; border-radius: 8px;">
-    <img src="图2URL" alt="商品名称" style="width: 48%; border-radius: 8px;">
-</div>
-```
-
-**图片类型：**
 - 封面图：`featured-image` 类，尺寸 1200x600
 - 正文图：`article-image` 类，尺寸 1200x600
-- 商品图：600x600 正方形（使用 odnHeight=600&odnWidth=600）
+- 商品图：600x600 正方形
 
-**验证图片URL是否有效：**
-```bash
-curl -sI "图片URL" | head -5
-# HTTP/1.1 200 OK 表示有效
-```
+### 步骤 4：在首页添加卡片
 
-### 步骤 5：更新主页
+根据提示词中指定的 `放置位置`，选择对应区块插入卡片（见下方模板）。
 
-在 `index.html` 中添加文章卡片：
+---
+
+## 首页区块说明
+
+### Feature 大卡片（`feature-list`）
+- 左图右文，大尺寸
+- 放深度评测、重磅推荐
+- 通常 2-3 篇
+
+### Offer 商家卡片（`offers`）
+- 小卡片，带商家 logo
+- 放有明确品牌的合作推广
+- 固定 4 篇
+
+### Insights 三列卡片（`insights`）
+- 图文卡片，三列排列
+- 放常规文章
+- 每行 3 篇，可多行
+
+---
+
+## 卡片 HTML 模板
+
+### Feature 大卡片
 
 ```html
-<article class="article-card" data-category="分类">
-    <a href="articles/xxx.html" class="article-link">
-        <div class="article-image">
-            <img src="..." alt="..." loading="lazy">
-        </div>
-        <div class="article-content">
-            <span class="article-category">分类名称</span>
-            <h2 class="article-title">文章标题</h2>
-            <p class="article-excerpt">文章摘要...</p>
-            <div class="article-meta">
-                <span class="meta-item">日期</span>
-                <span class="meta-item">阅读时间</span>
-            </div>
-        </div>
-    </a>
-</article>
+<a href="articles/xxx.html" class="feature-card reveal">
+  <div><img src="封面图URL" alt="描述" /></div>
+  <div class="feature-body">
+    <div>
+      <div class="tag-row">
+        <span class="tag orange">分类</span>
+        <span class="tag">X min read</span>
+        <span class="tag">Affiliate guide</span>
+      </div>
+      <h3>文章标题</h3>
+      <p>文章摘要</p>
+    </div>
+    <div><span class="btn primary">Read Guide</span></div>
+  </div>
+</a>
 ```
 
-**注意：** 如果需要置顶文章，将其放在第一个 `<article class="article-card">` 位置。
+### Offer 商家卡片
+
+```html
+<a href="articles/xxx.html" class="offer-card reveal">
+  <div>
+    <div class="merchant">
+      <div class="merchant-logo">首字母</div>
+      <div><strong>品牌名</strong><span>品类描述</span></div>
+    </div>
+    <h3>文章标题</h3>
+    <p>文章摘要</p>
+  </div>
+  <span class="btn">CTA文案</span>
+</a>
+```
+
+### Insights 三列卡片
+
+```html
+<a href="articles/xxx.html" class="insight-card reveal">
+  <img src="封面图URL" alt="描述" />
+  <div class="insight-body">
+    <span class="tag orange">分类</span>
+    <h3>文章标题</h3>
+    <p>文章摘要</p>
+    <span class="btn">Read Guide</span>
+  </div>
+</a>
+```
+
+### delay 类（控制动画顺序）
+
+在 class 中加 `delay-1` 到 `delay-4` 控制渐显顺序：
+```html
+<article class="insight-card reveal delay-1">...</article>
+<article class="insight-card reveal delay-2">...</article>
+```
 
 ---
 
@@ -161,50 +241,41 @@ curl -sI "图片URL" | head -5
 | 问题 | 解决方案 |
 |------|----------|
 | 黄底高亮 | 移除 `<mark class="link-highlight">` 标签 |
-| 图片不显示 | 使用 Unsplash 外部图片链接 |
-| 重复文章 | 检查 index.html 是否有多余的文章卡片 |
+| 图片不显示 | 使用 Unsplash 或品牌 CDN 图片链接 |
 | 排版不一致 | 参考现有文章的 HTML 结构 |
-| 本地测试 | 使用 `python -m http.server 8080` 启动本地服务器 |
+| 本地测试 | `python3 -m http.server 8000` |
+| 分类卡片点击无反应 | 正常，分类卡片仅作视觉引导 |
+| 文章页头部样式丢失 | 确认引用了 `style.css` + `article.css` |
 
 ---
 
-## 技术要点
+## 技术参考
 
 ### 联盟链接格式
 ```
 https://app.partnermatic.com/track/{追踪ID}?url={URL编码后的目标网址}
 ```
 
-### Sam's Club 图片URL格式
-```
-https://i5.samsclubimages.com/asr/{图片ID}.{hash}.jpeg?odnHeight=600&odnWidth=600&odnBg=FFFFFF
-```
-- 获取正方形 600x600 图片
-- 原始图片通常为 2000x2000
-
-### Unsplash 图片链接格式
+### Unsplash 图片链接
 ```
 https://images.unsplash.com/photo-{图片ID}?w={宽度}&h={高度}&fit=crop
 ```
 
 ### 分类标签
-- Fashion & Accessories
-- Health & Beauty
-- Home & Garden
-- Travel & Accommodation
-- Finance & Insurance
-- Food & Beverage
-- Entertainment & Tickets
+- Fashion & Accessories → `fashion`
+- Health & Beauty → `beauty`
+- Home & Garden → `home`
+- Travel & Accommodation → `travel`
+- Finance & Insurance → `finance`
+- Food & Beverage → `food`
+- Entertainment & Tickets → `entertainment`
 
 ### 本地开发
-
-启动本地服务器：
 ```bash
-cd G:\Opencode_Code\comprehensiveworld-main
-python -m http.server 8080
+cd ~/claudecode-code/EclipseLane-mainv2
+python3 -m http.server 8000
 ```
-
-访问：http://localhost:8080
+访问：http://localhost:8000
 
 ### 验证图片URL
 ```bash
@@ -212,148 +283,38 @@ curl -sI "图片URL" | head -5
 # 返回 HTTP/1.1 200 OK 表示图片有效
 ```
 
+### 检查文章链接完整性
+```bash
+# 列出首页所有文章链接
+grep -o 'articles/[^"]*\.html' index.html | sort -u
+
+# 对比 articles 目录实际文件
+diff <(grep -o 'articles/[^"]*\.html' index.html | sort -u) <(ls articles/*.html | sed 's|articles/||' | sort)
+```
+
 ---
 
 ## 文件结构
 
 ```
-comprehensiveworld-main/
-├── index.html              # 主页
-├── about.html             # 关于页面
-├── contact.html           # 联系页面
-├── articles/              # 文章目录
-│   ├── concert-tickets-on-viagogo-marketplace.html
-│   ├── hotel-xcaret-mexico.html
+EclipseLane-mainv2/
+├── index.html              # 首页（多区块布局）
+├── about.html              # 关于页面
+├── contact.html            # 联系页面
+├── articles/               # 文章详情页
+│   ├── spier-mackay-mens-tailored-fashion-guide.html
+│   ├── beautybase-fragrance-guide-2026.html
 │   └── ...
-├── css/                   # 样式目录
-│   ├── style.css
-│   └── article.css
-├── js/                    # JavaScript 目录
-│   └── main.js
-├── images/                # 图片目录
-├── favicon.ico
-└── README.md
+├── css/
+│   ├── style.css           # 全局样式 + 设计系统
+│   ├── article.css         # 文章详情页样式
+│   └── pages.css           # About/Contact 页面样式
+├── js/
+│   └── main.js             # 移动菜单 + 滚动渐显动画
+├── images/                 # 本地图片（如有）
+└── guide.md                # 本文件
 ```
 
 ---
 
-## 注意事项
-
-1. **每次修改后检查链接** - 确保联盟追踪链接正确
-2. **图片使用外部链接** - 推荐使用 Unsplash
-3. **保持排版一致** - 参考现有文章格式
-4. **测试本地** - 修改后用本地服务器测试
-5. **提交前检查** - 确保没有破坏现有功能
-
-## 注意事项
-
-1. **每次修改后检查链接** - 确保联盟追踪链接正确
-2. **图片使用外部链接** - 推荐使用 Unsplash
-3. **保持排版一致** - 参考现有文章格式
-4. **测试本地** - 修改后用本地服务器测试
-5. **提交前检查** - 确保没有破坏现有功能
-
----
-
-## 修改主页卡片的正确方法
-
-### 重要：先检查原始文件结构
-
-添加新文章卡片前，必须先检查 index.html 的 articles-grid 结构是否正确：
-
-```python
-import re
-content = open('index.html').read()
-match = re.search(r'<div class="articles-grid">(.*?)</section>', content, re.DOTALL)
-grid = match.group(1)
-opens = grid.count('<article')
-closes = grid.count('</article>')
-print(f'Articles: opens={opens}, closes={closes}')
-# 必须相等才能继续
-```
-
-### 如果结构不平衡
-
-1. **多余的 `</article>`** - 找到并删除（在 `<article` 之前的位置）
-2. **缺少 `</article>`** - 在对应位置添加
-
-### 添加新卡片的步骤
-
-1. **确认结构平衡后** - 才能进行修改
-2. **定位插入点** - 在 `<div class="articles-grid">` 之后，第一个现有卡片之前
-3. **一次性完成** - 不要分多次编辑
-4. **验证结果** - 再次检查标签是否平衡
-
-### 验证命令
-
-```bash
-# 检查 Thrive 文章数量（应该是 4：图片、分类、标题、摘要）
-python -c "print(open('index.html').count('Thrive Pet Foods'))"
-
-# 检查 articles-grid 内的标签平衡
-python -c "
-import re
-content = open('index.html').read()
-m = re.search(r'<div class=\"articles-grid\">(.*?)</section>', content, re.DOTALL)
-grid = m.group(1)
-print(f'opens: {grid.count(\"<article\")}, closes: {grid.count(\"</article>\")}')
-"
-```
-
-### 卡片去重和移动
-
-如果发现主页有重复的卡片：
-
-1. **查找重复** - 搜索文章标题，确认所有出现位置
-   ```bash
-   grep -n "文章标题" index.html
-   ```
-
-2. **删除重复** - 保留需要的位置，删除多余的卡片代码
-   ```html
-   <!-- 删除整个重复的 article 块 -->
-   <article class="article-card" data-category="...">
-       ...
-   </article>
-   ```
-
-3. **移动位置** - 先删除要移动的卡片，然后在目标位置插入
-
-4. **验证** - 检查 `<article` 和 `</article>` 标签数量是否一致
-
-### 修改日期或重复内容时的注意事项
-
-如果需要修改多个相同元素（如多个卡片使用相同日期），直接替换会导致匹配不唯一。
-
-**问题示例：**
-```
-错误：直接替换 "July 19, 2025" 
-原因：多个卡片都使用这个日期，grep 无法区分
-错误信息：Found multiple matches for oldString
-```
-
-**解决方法：**
-使用更多上下文内容来唯一标识：
-```html
-<!-- 替换前：包含文章标题或更多周围标签 -->
-<oldString>
-    <h2 class="article-title">Palm Angels: ...</h2>
-    ...
-    July 19, 2025
-    ...
-</oldString>
-
-<!-- 替换后：使用唯一标识的内容 -->
-<newString>
-    <h2 class="article-title">Palm Angels: ...</h2>
-    ...
-    March 15, 2026
-    ...
-</newString>
-```
-
----
-
-*最后更新：2026-03-02*
-
-*最后更新：2026-02-27*
+*最后更新：2026-05-09*

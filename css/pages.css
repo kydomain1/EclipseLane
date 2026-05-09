@@ -1,7 +1,9 @@
 /* Pages Specific Styles (About & Contact) */
 
+/* Page content */
 .content-section {
     padding: 4rem 0 6rem;
+    padding-top: 100px;
 }
 
 .content-max-width {
@@ -11,26 +13,25 @@
 
 .text-content {
     margin-bottom: 4rem;
-    animation: fadeIn 0.6s ease;
 }
 
 .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-gray-900);
+    color: var(--ink);
     margin-bottom: 1.5rem;
 }
 
 .section-title-centered {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-gray-900);
+    color: var(--ink);
     margin-bottom: 3rem;
     text-align: center;
 }
 
 .text-content p {
-    color: var(--color-gray-600);
+    color: var(--muted);
     font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
@@ -41,7 +42,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    animation: slideUp 0.6s ease;
 }
 
 .value-card {
@@ -52,30 +52,30 @@
 .value-icon {
     width: 4rem;
     height: 4rem;
-    background-color: var(--color-gray-100);
-    border-radius: var(--border-radius-lg);
+    background: var(--gray-soft);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
-    color: var(--color-gray-700);
+    color: var(--ink);
 }
 
 .value-card h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--ink);
     margin-bottom: 0.75rem;
 }
 
 .value-card p {
-    color: var(--color-gray-600);
+    color: var(--muted);
     line-height: 1.6;
 }
 
 /* Categories Section */
 .categories-section {
-    background-color: var(--color-gray-50);
+    background: #fff;
     padding: 4rem 0 6rem;
 }
 
@@ -86,21 +86,21 @@
 }
 
 .category-card-about {
-    background-color: var(--color-white);
-    border-radius: var(--border-radius-md);
+    background: var(--bg);
+    border-radius: var(--radius-md);
     padding: 2rem;
-    animation: slideUp 0.6s ease;
+    border: 1px solid rgba(17,17,17,.06);
 }
 
 .category-card-about h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--ink);
     margin-bottom: 0.75rem;
 }
 
 .category-card-about p {
-    color: var(--color-gray-600);
+    color: var(--muted);
     line-height: 1.6;
 }
 
@@ -117,13 +117,14 @@
 
 .mission-text {
     font-size: 1.25rem;
-    color: var(--color-gray-600);
+    color: var(--muted);
     line-height: 1.8;
 }
 
 /* Contact Page Styles */
 .contact-section {
     padding: 4rem 0 6rem;
+    padding-top: 100px;
 }
 
 .contact-grid {
@@ -140,7 +141,7 @@
 
 .contact-intro {
     font-size: 1.125rem;
-    color: var(--color-gray-600);
+    color: var(--muted);
     line-height: 1.8;
     margin-bottom: 2rem;
 }
@@ -161,47 +162,47 @@
 .contact-method-icon {
     width: 3rem;
     height: 3rem;
-    background-color: var(--color-gray-100);
-    border-radius: var(--border-radius-md);
+    background: var(--gray-soft);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--color-gray-700);
+    color: var(--ink);
 }
 
 .contact-method h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--ink);
     margin-bottom: 0.25rem;
 }
 
 .contact-method p,
 .contact-method a {
-    color: var(--color-gray-600);
+    color: var(--muted);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: color .2s;
 }
 
 .contact-method a:hover {
-    color: var(--color-gray-900);
+    color: var(--ink);
 }
 
 .response-time {
     padding-top: 2rem;
-    border-top: 1px solid var(--color-gray-200);
+    border-top: 1px solid var(--line);
 }
 
 .response-time h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--ink);
     margin-bottom: 0.75rem;
 }
 
 .response-time p {
-    color: var(--color-gray-600);
+    color: var(--muted);
     line-height: 1.6;
 }
 
@@ -225,25 +226,25 @@
 .form-group label {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-gray-900);
+    color: var(--ink);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-md);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
     font-size: 1rem;
     font-family: inherit;
-    transition: border-color var(--transition-fast);
+    transition: border-color .2s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-gray-400);
+    border-color: var(--orange);
 }
 
 .form-group textarea {
@@ -252,15 +253,15 @@
 }
 
 .submit-btn {
-    background-color: var(--color-gray-900);
-    color: var(--color-white);
+    background: var(--ink);
+    color: #fff;
     padding: 1rem 2rem;
     border: none;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--radius-md);
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color var(--transition-fast);
+    transition: background .2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,11 +269,11 @@
 }
 
 .submit-btn:hover {
-    background-color: var(--color-gray-800);
+    background: #333;
 }
 
 .submit-btn svg {
-    transition: transform var(--transition-fast);
+    transition: transform .2s;
 }
 
 .submit-btn:hover svg {
@@ -282,9 +283,8 @@
 .form-message {
     text-align: center;
     padding: 1rem;
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--radius-md);
     font-weight: 500;
-    animation: fadeIn 0.3s ease;
 }
 
 .form-message.success {
@@ -297,29 +297,14 @@
     color: #721c24;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (min-width: 768px) {
-    .values-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .categories-grid-about {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .values-grid { grid-template-columns: repeat(3, 1fr); }
+    .categories-grid-about { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 1024px) {
-    .section-title {
-        font-size: 2.5rem;
-    }
-    
-    .section-title-centered {
-        font-size: 2.5rem;
-    }
+    .section-title { font-size: 2.5rem; }
+    .section-title-centered { font-size: 2.5rem; }
 }
-
-
